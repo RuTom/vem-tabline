@@ -30,7 +30,7 @@ function! vem_tabline#separator#section.render() abort
     if self.extra_buffer_count != 0
         return '%#VemTablineSeparator#' . self.label . '%='
     else
-        return '%#VemTablineNormal#%='
+        return '%#VemTablineSeperator#%='
     endif
 endfunction
 
