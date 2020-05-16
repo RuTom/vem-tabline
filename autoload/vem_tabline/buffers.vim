@@ -385,7 +385,7 @@ function! vem_tabline#buffers#buffer_item.get_length(tagnr) abort
 endfunction
 
 function! vem_tabline#buffers#buffer_item.get_label() abort
-    return ' ' . self.tagnr . self.name . self.discriminator . self.flags . ' '
+    return self.tagnr . self.name . self.discriminator . self.flags
 endfunction
 
 function! vem_tabline#buffers#buffer_item.get_tagnr(index) abort
