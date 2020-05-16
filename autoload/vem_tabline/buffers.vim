@@ -385,7 +385,7 @@ function! vem_tabline#buffers#buffer_item.get_length(tagnr) abort
 endfunction
 
 function! vem_tabline#buffers#buffer_item.get_label() abort
-    return self.tagnr . self.name . self.discriminator . self.flags
+    return ' ' . self.tagnr . self.name . self.discriminator . self.flags . ' '
 endfunction
 
 function! vem_tabline#buffers#buffer_item.get_tagnr(index) abort
@@ -411,7 +411,7 @@ function! vem_tabline#buffers#goto_buffer(minwid, clicks, btn, modifiers) abort
 endfunction
 
 function! vem_tabline#buffers#buffer_item.render(modifier) abort
-    let label = ' '
+    let label = ''
     if self.tagnr != ''
         let label .= '%#VemTablineNumber' . a:modifier . '#'
         let label .= self.tagnr
@@ -424,7 +424,6 @@ function! vem_tabline#buffers#buffer_item.render(modifier) abort
         let label .= '%#VemTabline' . a:modifier . '#'
     endif
     let label .= self.flags
-    let label .= ' '
 
     " Enable mouse clicking (only neovim for now)
     if has('tablineat')
